@@ -141,13 +141,13 @@ public class NewsListFragment extends Fragment {
                     if (response.isSuccessful()) {
                         addArticles(response.body().getArticles());
                     } else {
-                        //TODO: SHOW ERROR
+                        ((MainActivity)getActivity()).showError("An error occurred please try again later...");
                     }
                 }
 
                 @Override
                 public void onFailure(Call<GenericResponse> call, Throwable t) {
-                    //TODO: SHOW ERROR
+                    ((MainActivity)getActivity()).showError("An error occurred please try again later...");
                 }
             });
         }
