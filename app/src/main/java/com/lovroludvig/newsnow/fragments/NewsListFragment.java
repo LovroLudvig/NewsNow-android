@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lovroludvig.newsnow.R;
+import com.lovroludvig.newsnow.activities.MainActivity;
 import com.lovroludvig.newsnow.adapters.NewsAdapter;
 import com.lovroludvig.newsnow.entities.Article;
 import com.lovroludvig.newsnow.networking.ApiService;
@@ -108,13 +109,13 @@ public class NewsListFragment extends Fragment {
                     if (response.isSuccessful()) {
                         addArticles(response.body().getArticles());
                     } else {
-                        //TODO: SHOW ERROR
+                        ((MainActivity)getActivity()).showError("An error occurred, please try again later...");
                     }
                 }
 
                 @Override
                 public void onFailure(Call<GenericResponse> call, Throwable t) {
-                    //TODO: SHOW ERROR
+                    ((MainActivity)getActivity()).showError("An error occurred, please try again later...");
                 }
             });
         } else if (newsType.equals(CATEGORY_NEWS)){
@@ -124,13 +125,13 @@ public class NewsListFragment extends Fragment {
                     if (response.isSuccessful()) {
                         addArticles(response.body().getArticles());
                     } else {
-                        //TODO: SHOW ERROR
+                        ((MainActivity)getActivity()).showError("An error occurred, please try again later...");
                     }
                 }
 
                 @Override
                 public void onFailure(Call<GenericResponse> call, Throwable t) {
-                    //TODO: SHOW ERROR
+                    ((MainActivity)getActivity()).showError("An error occurred, please try again later...");
                 }
             });
         } else{

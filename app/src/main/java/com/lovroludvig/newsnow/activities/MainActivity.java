@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -84,6 +85,15 @@ public class MainActivity extends AppCompatActivity implements PageViewerFragmen
             fragmentTransaction.add(R.id.fragmentFrame, pageViewerFragment);
             fragmentTransaction.commit();
         }
+    }
+
+    public void showError(String text) {
+        new AlertDialog.Builder(this)
+                .setTitle("Error!")
+                .setMessage(text)
+                .setPositiveButton("OK", null)
+                .create()
+                .show();
     }
 
     @Override
