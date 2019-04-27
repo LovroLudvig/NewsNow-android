@@ -109,13 +109,13 @@ public class NewsListFragment extends Fragment {
                     if (response.isSuccessful()) {
                         addArticles(response.body().getArticles());
                     } else {
-                        ((MainActivity)getActivity()).showError("An error occurred, please try again later...");
+                        ((MainActivity)getActivity()).showError(response.message());
                     }
                 }
 
                 @Override
                 public void onFailure(Call<GenericResponse> call, Throwable t) {
-                    ((MainActivity)getActivity()).showError("An error occurred, please try again later...");
+                    ((MainActivity)getActivity()).showError(t.getMessage());
                 }
             });
         } else if (newsType.equals(CATEGORY_NEWS)){
@@ -125,13 +125,13 @@ public class NewsListFragment extends Fragment {
                     if (response.isSuccessful()) {
                         addArticles(response.body().getArticles());
                     } else {
-                        ((MainActivity)getActivity()).showError("An error occurred, please try again later...");
+                        ((MainActivity)getActivity()).showError(response.message());
                     }
                 }
 
                 @Override
                 public void onFailure(Call<GenericResponse> call, Throwable t) {
-                    ((MainActivity)getActivity()).showError("An error occurred, please try again later...");
+                    ((MainActivity)getActivity()).showError(t.getMessage());
                 }
             });
         } else{
@@ -141,13 +141,13 @@ public class NewsListFragment extends Fragment {
                     if (response.isSuccessful()) {
                         addArticles(response.body().getArticles());
                     } else {
-                        ((MainActivity)getActivity()).showError("An error occurred please try again later...");
+                        ((MainActivity)getActivity()).showError(response.message());
                     }
                 }
 
                 @Override
                 public void onFailure(Call<GenericResponse> call, Throwable t) {
-                    ((MainActivity)getActivity()).showError("An error occurred please try again later...");
+                    ((MainActivity)getActivity()).showError(t.getMessage());
                 }
             });
         }
