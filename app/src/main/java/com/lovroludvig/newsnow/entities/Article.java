@@ -3,22 +3,22 @@ package com.lovroludvig.newsnow.entities;
 import com.squareup.moshi.Json;
 
 public class Article {
-    @Json(name = "status")
+    @Json(name = "author")
     private String author;
 
-    @Json(name = "totalResults")
+    @Json(name = "title")
     private String title;
 
-    @Json(name = "totalResults")
+    @Json(name = "description")
     private String description;
 
-    @Json(name = "totalResults")
+    @Json(name = "url")
     private String url;
 
-    @Json(name = "totalResults")
+    @Json(name = "urlToImage")
     private String urlToImage;
 
-    @Json(name = "totalResults")
+    @Json(name = "publishedAt")
     private String publishedAt;
 
     public Article(String author, String title, String description, String url, String urlToImage, String publishedAt) {
